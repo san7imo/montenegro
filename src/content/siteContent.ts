@@ -4,196 +4,331 @@ export const siteContent: SiteContent = {
   brand: {
     name: "Montenegro Salud y Belleza",
     shortName: "Montenegro",
-    tagline: "Bienestar que se siente. Presencia que permanece.",
+    tagline: "Salud, tecnología y belleza en un mismo centro.",
     logo: "/assets/logo-montenegro.png",
   },
   navigation: [
     { label: "Inicio", href: "#inicio" },
-    { label: "Nosotros", href: "#nosotros" },
-    { label: "Servicios", href: "#servicios" },
-    { label: "Experiencia", href: "#experiencia" },
-    { label: "Galería", href: "#galeria" },
-    { label: "Contacto", href: "#contacto" },
+    { label: "Tecnología", href: "#tecnologia" },
+    { label: "Tratamientos", href: "#tratamientos" },
+    { label: "Valoración", href: "#valoracion" },
+    { label: "Preguntas", href: "#preguntas" },
+    { label: "Reserva", href: "#reserva" },
   ],
   hero: {
-    eyebrow: "Montenegro Salud y Belleza",
-    accent: "Bienestar que se siente. Presencia que permanece.",
-    title: "Un espacio pensado para tu bienestar y tu belleza",
+    eyebrow: "Clínica estética avanzada en Vitoria-Gasteiz",
+    accent: "Montenegro Salud y Belleza",
+    title: "Salud, tecnología y belleza en un mismo centro",
     description:
-      "En Montenegro Salud y Belleza el cuidado personal se entiende como una experiencia serena, elegante y cercana. Cada detalle está orientado a que te sientas cómoda, tranquila y acompañada desde el primer contacto.",
+      "Montenegro Salud y Belleza combina tecnología estética de última generación, experiencia profesional y protocolos personalizados para lograr resultados visibles sin cirugía.",
     primaryAction: {
-      label: "Agenda tu cita",
-      href: "#contacto",
+      label: "Reserva tu valoración",
+      href: "#reserva",
     },
     secondaryAction: {
-      label: "Explorar el recorrido",
-      href: "#servicios",
+      label: "Ver tratamientos",
+      href: "#tratamientos",
     },
-    noteTitle: "Una identidad visual que respira calma",
-    noteDescription:
-      "La marca combina limpieza formal, delicadeza y contraste controlado para proyectar confianza sin excesos.",
-    image: {
-      src: "/assets/mockup-1.webp",
-      alt: "Aplicación del logotipo Montenegro en una señal exterior iluminada",
-      caption: "Presencia exterior",
-      note: "Un primer contacto limpio, reconocible y sobrio.",
-    },
-    rails: [
-      {
-        title: "Lenguaje",
-        description: "Sutil, femenino y premium sin recurrir a ornamentos pesados.",
-      },
-      {
-        title: "Material visual",
-        description: "Logo original y tres aplicaciones gráficas integradas con criterio.",
-      },
+    highlights: [
+      "Sin compromiso",
+      "Máxima confidencialidad",
+      "Equipo sanitario especializado",
     ],
+    backgroundImage: "/assets/montenegro-portada-olga.jpg",
   },
   intro: {
-    id: "nosotros",
-    eyebrow: "Bienvenida",
-    title: "Cuidar de ti también es regalarte una pausa",
+    id: "tecnologia",
+    eyebrow: "Tecnología avanzada",
+    title: "Resultados visibles y seguros desde una visión integral",
     description:
-      "Montenegro nace para acompañar procesos de bienestar y belleza desde una atmósfera tranquila, profesional y cálida. La experiencia busca equilibrio: una atención cercana, una estética limpia y un entorno que invite a bajar el ritmo.",
+      "En Montenegro Salud y Belleza combinamos aparatología de última generación con una visión médica y estética integral para cuidar tu rostro, tu cuerpo y tu bienestar general.",
     highlights: [
       {
-        title: "Atención cercana",
-        description: "Una experiencia pensada para escuchar, orientar y cuidar con sensibilidad.",
+        title: "Enfoque médico-estético integral",
+        description:
+          "Tratamientos faciales, corporales, terapéuticos y de bienestar conectados entre sí para potenciar resultados y cuidar tu salud a largo plazo.",
       },
       {
-        title: "Ambiente sereno",
-        description: "Espacios y decisiones visuales que privilegian calma, orden y respiración.",
+        title: "Protocolos personalizados",
+        description:
+          "Valoración individual, seguimiento continuo y adaptación del tratamiento a tu piel, tu cuerpo, tu ritmo de vida y tus objetivos estéticos.",
       },
       {
-        title: "Estética sobria",
-        description: "Una imagen premium construida desde proporción, luz y materiales limpios.",
+        title: "Seguridad y confort en cada sesión",
+        description:
+          "Tecnologías no invasivas, espacios cuidados y un equipo experto que te acompaña en todo momento para que te sientas tranquila y segura.",
       },
     ],
   },
   services: {
-    id: "servicios",
-    eyebrow: "Servicios destacados",
-    title: "Una estructura clara para presentar el portafolio sin saturar la página",
+    id: "tratamientos",
+    eyebrow: "Tratamientos",
+    title: "Facial, corporal, bienestar y recuperación en un solo recorrido",
     description:
-      "Como todavía no existe un catálogo definitivo, esta primera versión ordena categorías comerciales amplias y editables para que el sitio pueda publicarse con naturalidad y crecer después.",
+      "Especialistas en estética facial avanzada, moldeamiento corporal sin cirugía, masajes terapéuticos y terapias de recuperación.",
     items: [
       {
-        title: "Cuidado facial",
-        description: "Rutinas y experiencias orientadas a frescura, armonía y atención delicada del rostro.",
+        title: "Estética facial avanzada",
+        description:
+          "Tratamientos faciales diseñados para rejuvenecer, hidratar y mejorar la calidad de la piel con técnicas avanzadas y sin procedimientos invasivos.",
+        itemsTitle: "Servicios faciales",
+        items: [
+          "Limpieza facial profunda",
+          "Limpieza facial con ácido hialurónico",
+          "Radiofrecuencia facial",
+          "Lifting facial",
+          "Bellaction Duo",
+          "Exfoliación facial",
+          "Cócteles revitalizantes",
+        ],
+        benefitsTitle: "Beneficios de la estética facial avanzada",
+        benefits: [
+          "Reducción de arrugas y líneas finas",
+          "Mejora de la elasticidad y textura de la piel",
+          "Estimulación profunda de colágeno",
+          "Hidratación intensa y duradera",
+          "Aumento de luminosidad y firmeza",
+          "Rostro más descansado y uniforme",
+        ],
+        note:
+          "Recomendado para personas que buscan un efecto rejuvenecedor visible, mejorar la calidad de la piel y prevenir el envejecimiento prematuro sin cirugías ni tiempos de baja.",
       },
       {
-        title: "Bienestar corporal",
-        description: "Espacios pensados para acompañar procesos de cuidado, descanso y sensación de ligereza.",
+        title: "Moldeamiento corporal sin cirugía",
+        description:
+          "Tratamientos avanzados para reducir grasa localizada, remodelar la silueta y mejorar la firmeza corporal sin cirugía, sin cicatrices y sin tiempos de recuperación.",
+        itemsTitle: "Tecnologías disponibles",
+        items: [
+          "Criolipólisis",
+          "Liposucción sin cirugía",
+          "Máquina moldeadora 4 en 1",
+          "Gimnasia pasiva",
+          "Presoterapia",
+          "Maderoterapia",
+          "Metaloterapia",
+        ],
+        benefitsTitle: "Beneficios del moldeamiento corporal",
+        benefits: [
+          "Reducción progresiva de grasa localizada",
+          "Tonificación muscular y mejora del contorno",
+          "Mejora notable de la circulación",
+          "Resultados seguros, controlados y no invasivos",
+          "Sin tiempos de recuperación ni baja laboral",
+        ],
+        note: "Zonas indicadas: abdomen, brazos, piernas, papada y glúteos.",
       },
       {
-        title: "Experiencias de relajación",
-        description: "Momentos concebidos para bajar el ritmo, reconectar y regalarte una pausa consciente.",
+        title: "Masajes y bienestar",
+        description:
+          "Experiencias terapéuticas pensadas para aliviar la tensión muscular, mejorar la circulación y promover un estado de bienestar físico y emocional.",
+        itemsTitle: "Servicios de masajes y spa",
+        items: [
+          "Masaje relajante",
+          "Masaje linfático",
+          "Drenaje linfático",
+          "Masaje en pareja",
+          "Baños medicinales",
+          "Spa de manos y pies",
+        ],
+        benefitsTitle: "Beneficios para tu cuerpo y tu mente",
+        benefits: [
+          "Reducción de la inflamación y la retención de líquidos",
+          "Eliminación de toxinas y mejora del sistema linfático",
+          "Relajación profunda y mejora de la calidad del sueño",
+          "Disminución del estrés, la ansiedad y la sobrecarga muscular",
+          "Sensación de ligereza y bienestar general tras cada sesión",
+        ],
+        note:
+          "Un espacio íntimo, tranquilo y cuidado donde desconectar del ritmo diario y reconectar contigo misma.",
       },
       {
-        title: "Atención personalizada",
-        description: "Un enfoque cercano para adaptar la experiencia a cada persona con calidez y criterio.",
+        title: "Terapias especializadas",
+        description:
+          "Tratamientos orientados a la recuperación post-operatoria, post-parto y al bienestar íntimo femenino, con máxima discreción y acompañamiento profesional.",
+        itemsTitle: "Tratamientos disponibles",
+        items: [
+          "Terapia post-operatoria",
+          "Control de inflamación y hematomas",
+          "Apoyo a la correcta cicatrización",
+          "Terapia post-parto",
+          "Rejuvenecimiento vaginal",
+          "Tratamiento de várices y úlceras varicosas",
+        ],
+        benefitsTitle: "Enfoque del protocolo",
+        benefits: [
+          "Protocolos personalizados",
+          "Acompañamiento profesional constante",
+          "Resultados progresivos que priorizan tu salud y tu comodidad",
+        ],
+        note: "Bienestar íntimo femenino y recuperación con seguimiento cercano.",
+      },
+      {
+        title: "Belleza integral",
+        description:
+          "Servicios complementarios para una experiencia estética completa en un solo espacio, cuidando cada detalle de tu imagen.",
+        itemsTitle: "Servicios de belleza integral",
+        items: [
+          "Depilación láser",
+          "Depilación con hilo",
+          "Manicura y pedicura",
+          "Cortes y peinados",
+          "Cóctel anticaída capilar",
+        ],
+        benefitsTitle: "Cómo se integra en tu plan",
+        benefits: [
+          "Complementa los tratamientos faciales, corporales o terapéuticos",
+          "Potencia los resultados con una experiencia estética completa",
+          "Te ayuda a sentirte bien por dentro y por fuera",
+        ],
+        note: "Belleza integral en un mismo centro, con una atención coherente de principio a fin.",
       },
     ],
   },
   experience: {
-    id: "experiencia",
-    eyebrow: "Experiencia",
-    title: "Una propuesta que prioriza comodidad, calma y confianza",
+    id: "centro",
+    eyebrow: "Centro integral",
+    title: "Montenegro Salud y Belleza, tu centro estético integral en Vitoria-Gasteiz",
     description:
-      "La sobriedad del diseño ayuda a que el mensaje principal se mantenga claro: un lugar pensado para el bienestar integral, con una presencia femenina y profesional.",
+      "Somos un centro de salud y belleza que combina tecnología avanzada, experiencia profesional y atención personalizada para ofrecerte resultados visibles sin procedimientos invasivos. Nuestro objetivo es claro: que cada visita se traduzca en un cambio positivo, medible y seguro en tu bienestar y en tu imagen.",
     items: [
       {
-        title: "Ritmo pausado",
-        description: "La navegación y la composición visual favorecen una lectura tranquila y sin ruido.",
+        title: "Tecnología y experiencia",
+        description:
+          "Aparatología estética de última generación y criterio profesional para trabajar cada caso con seriedad y precisión.",
       },
       {
-        title: "Contraste preciso",
-        description: "El azul profundo organiza la jerarquía y el fucsia aparece solo donde debe acentuar.",
+        title: "Atención personalizada",
+        description:
+          "Cada tratamiento se adapta a tu punto de partida, a tus objetivos y al ritmo con el que quieres avanzar.",
       },
       {
-        title: "Preparada para crecer",
-        description: "La base queda lista para incorporar reservas, testimonios, galería real y nuevos servicios.",
+        title: "Resultados visibles y seguros",
+        description:
+          "El recorrido prioriza tratamientos no invasivos, comodidad durante la sesión y mejoras progresivas con seguimiento.",
       },
     ],
   },
   gallery: {
-    id: "galeria",
-    eyebrow: "Lenguaje visual",
-    title: "Tres aplicaciones de marca que construyen presencia sin recargar",
+    id: "valoracion",
+    eyebrow: "Valoración personalizada",
+    title: "La primera cita está pensada para entender tu caso con claridad",
     description:
-      "Mientras se incorporan fotografías reales del centro, estas piezas ayudan a presentar el universo visual de Montenegro con una composición limpia y coherente.",
+      "Analizamos tu caso, definimos objetivos realistas y diseñamos un plan a medida con la tecnología más adecuada para lo que quieres trabajar.",
     items: [
       {
-        src: "/assets/mockup-1.webp",
-        alt: "Aplicación del logotipo Montenegro en un letrero exterior",
-        caption: "Señalética exterior",
-        note: "Visibilidad elegante y lectura clara en un contexto arquitectónico sobrio.",
+        title: "Qué revisamos contigo",
+        description:
+          "La valoración personalizada tiene como objetivo conocer tu caso, explicarte las opciones de tratamiento y resolver tus dudas.",
+        items: [
+          "Punto de partida facial, corporal o terapéutico",
+          "Objetivos realistas y tiempos del proceso",
+          "Opciones de tratamiento según tu caso",
+        ],
+        note: "Solo si estás de acuerdo pasamos a diseñar el plan y a programar las sesiones.",
       },
       {
-        src: "/assets/mockup-2.webp",
-        alt: "Aplicación del logotipo Montenegro sobre una superficie de vidrio",
-        caption: "Aplicación en vidrio",
-        note: "Una presencia ligera y refinada que se integra con naturalidad al entorno.",
+        title: "Cómo trabajamos el plan",
+        description:
+          "Diseñamos contigo un recorrido adaptado a tus objetivos faciales, corporales o de recuperación, con transparencia y sin compromiso.",
+        items: [
+          "Protocolos personalizados",
+          "Tecnología adecuada para cada necesidad",
+          "Seguimiento continuo durante el proceso",
+        ],
+        note: "Tratamientos no invasivos, máxima discreción y acompañamiento constante.",
       },
       {
-        src: "/assets/mockup-3.webp",
-        alt: "Aplicación del logotipo Montenegro sobre papel texturizado",
-        caption: "Acabado editorial",
-        note: "La marca también funciona desde la textura y el detalle en soportes impresos.",
+        title: "Qué puedes solicitar",
+        description:
+          "Puedes consultarnos por tratamientos faciales, corporales, masajes, terapias especializadas o belleza integral.",
+        items: [
+          "Reserva tu valoración",
+          "Agenda tu cita",
+          "Solicita información",
+        ],
+        note: "Respondemos habitualmente en menos de 24 horas laborables.",
+      },
+    ],
+  },
+  faq: {
+    id: "preguntas",
+    eyebrow: "Preguntas frecuentes",
+    title: "Resolvemos las dudas más habituales antes de tu primera cita",
+    description:
+      "Estas son algunas de las preguntas que la web de referencia ya responde para facilitar la reserva y explicar cómo trabaja Montenegro Salud y Belleza.",
+    items: [
+      {
+        question: "¿La valoración inicial tiene algún compromiso?",
+        answer:
+          "No. La valoración personalizada tiene como objetivo conocer tu caso, explicarte las opciones de tratamiento y resolver tus dudas. Solo si estás de acuerdo pasamos a diseñar el plan y a programar las sesiones.",
+      },
+      {
+        question: "¿Los tratamientos son dolorosos o invasivos?",
+        answer:
+          "Trabajamos con tecnologías no invasivas y protocolos pensados para minimizar las molestias. Antes de cada tratamiento te explicamos qué vas a sentir y realizamos las pruebas necesarias para garantizar tu seguridad.",
+      },
+      {
+        question: "¿En cuánto tiempo se ven los resultados?",
+        answer:
+          "Depende del tipo de tratamiento y del punto de partida. Muchos tratamientos faciales ofrecen resultados visibles desde la primera sesión, mientras que el moldeamiento corporal y las terapias especializadas se programan en ciclos para lograr mejoras progresivas y estables.",
+      },
+      {
+        question: "¿Quién realiza los tratamientos?",
+        answer:
+          "Un equipo de profesionales especializados en estética avanzada, terapias corporales y recuperación, formados en el uso de aparatología estética y en protocolos de seguridad sanitaria.",
       },
     ],
   },
   cta: {
-    eyebrow: "Agenda",
-    title: "Descubre una experiencia creada para resaltar tu bienestar",
+    eyebrow: "Reserva",
+    title: "Reserva ahora tu valoración personalizada",
     description:
-      "La landing está preparada para conectar WhatsApp, formulario o sistema de reservas cuando se confirmen los datos finales del negocio.",
+      "Diseñaremos contigo un plan de tratamiento adaptado a tus objetivos faciales, corporales o de recuperación, con total transparencia y sin compromiso.",
     primaryAction: {
-      label: "Solicitar información",
-      href: "#contacto",
+      label: "Reserva tu valoración",
+      href: "#reserva",
     },
     secondaryAction: {
-      label: "Volver al inicio",
-      href: "#inicio",
+      label: "Ver tratamientos",
+      href: "#tratamientos",
     },
   },
   contact: {
-    id: "contacto",
-    eyebrow: "Contacto",
-    title: "Datos listos para reemplazar por la información final",
+    id: "reserva",
+    eyebrow: "Reserva tu cita",
+    title: "Cuéntanos qué tratamiento te interesa y organizamos tu visita",
     description:
-      "Toda la información editable está centralizada para que puedas publicar rápido y después actualizar WhatsApp, dirección, horarios o redes sin rehacer la interfaz.",
+      "Indícanos qué tipo de tratamiento te interesa, ya sea facial, corporal, masajes, terapias especializadas o belleza integral, y nos pondremos en contacto contigo para confirmar día y hora.",
     details: [
       {
-        label: "WhatsApp",
-        value: "Pendiente por confirmar",
-        note: "Actualizar enlace y número final en el contenido del sitio.",
+        label: "Ubicación",
+        value: "Vitoria-Gasteiz",
+        note: "Centro estético integral con enfoque facial, corporal y terapéutico.",
       },
       {
-        label: "Dirección",
-        value: "Pendiente por confirmar",
-        note: "Definir sede o punto de atención definitivo.",
+        label: "Primera cita",
+        value: "Valoración personalizada",
+        note: "Sin compromiso, con objetivos claros y plan a medida.",
       },
       {
-        label: "Horario",
-        value: "Pendiente por confirmar",
-        note: "Agregar disponibilidad real antes de publicar.",
+        label: "Tratamientos",
+        value: "Facial, corporal, bienestar y recuperación",
+        note: "Protocolos personalizados y tecnologías no invasivas.",
       },
       {
-        label: "Instagram",
-        value: "Pendiente por confirmar",
-        note: "Conectar perfil oficial cuando exista o sea aprobado.",
+        label: "Tiempo de respuesta",
+        value: "Menos de 24 horas laborables",
+        note: "El equipo responde habitualmente dentro de ese plazo.",
       },
     ],
-    panelTitle: "Bloque preparado para conectar formulario o canal directo",
+    panelTitle: "Qué puedes solicitar desde esta primera toma de contacto",
     panelDescription:
-      "Este espacio puede enlazarse más adelante a WhatsApp, correo o una herramienta de reservas. Por ahora queda definido visualmente para no romper el recorrido de la página.",
-    panelFields: ["Nombre completo", "Teléfono o WhatsApp", "Mensaje"],
-    panelAction: "Canal de envío por definir",
+      "La petición inicial sirve para orientar tu caso, explicarte las alternativas disponibles y preparar una reserva más precisa desde el primer intercambio.",
+    panelSteps: ["Reserva tu valoración", "Agenda tu cita", "Solicita información"],
+    panelNote: "Respondemos habitualmente en menos de 24 horas laborables.",
   },
   footer: {
-    note: "Landing inicial alineada al manual de marca, con estructura lista para crecer.",
+    note: "Clínica estética avanzada en Vitoria-Gasteiz.",
     copyright: "Montenegro Salud y Belleza",
   },
 };
-

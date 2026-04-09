@@ -1,3 +1,4 @@
+import type { CSSProperties } from "react";
 import type { SiteContent } from "../../types/content";
 import { Container } from "../ui/Container";
 import { ButtonLink } from "../ui/ButtonLink";
@@ -8,7 +9,11 @@ interface HeroSectionProps {
 
 export function HeroSection({ content }: HeroSectionProps) {
   return (
-    <section className="hero-section" id="inicio">
+    <section
+      className="hero-section"
+      id="inicio"
+      style={{ "--hero-image": `url(${content.backgroundImage})` } as CSSProperties}
+    >
       <Container className="hero-section__layout">
         <div className="hero-section__copy">
           <p className="eyebrow">{content.eyebrow}</p>
@@ -24,33 +29,14 @@ export function HeroSection({ content }: HeroSectionProps) {
               variant="secondary"
             />
           </div>
-        </div>
 
-        <div className="hero-section__visuals">
-          <figure className="hero-figure">
-            <img alt={content.image.alt} src={content.image.src} />
-            <figcaption className="hero-figure__caption">
-              <p>{content.image.caption}</p>
-              <span>{content.image.note}</span>
-            </figcaption>
-          </figure>
-
-          <div className="hero-note">
-            <h2>{content.noteTitle}</h2>
-            <p>{content.noteDescription}</p>
-          </div>
-
-          <div className="hero-rails">
-            {content.rails.map((item) => (
-              <article key={item.title}>
-                <p>{item.title}</p>
-                <span>{item.description}</span>
-              </article>
+          <ul className="hero-section__highlights" aria-label="Destacados">
+            {content.highlights.map((item) => (
+              <li key={item}>{item}</li>
             ))}
-          </div>
+          </ul>
         </div>
       </Container>
     </section>
   );
 }
-

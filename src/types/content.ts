@@ -16,12 +16,17 @@ export interface HighlightItem {
 export interface ServiceItem {
   title: string;
   description: string;
+  itemsTitle: string;
+  items: string[];
+  benefitsTitle: string;
+  benefits: string[];
+  note: string;
 }
 
-export interface GalleryItem {
-  src: string;
-  alt: string;
-  caption: string;
+export interface SpotlightItem {
+  title: string;
+  description: string;
+  items: string[];
   note: string;
 }
 
@@ -29,6 +34,11 @@ export interface ContactDetail {
   label: string;
   value: string;
   note: string;
+}
+
+export interface FaqItem {
+  question: string;
+  answer: string;
 }
 
 export interface SiteContent {
@@ -46,10 +56,8 @@ export interface SiteContent {
     description: string;
     primaryAction: LinkAction;
     secondaryAction: LinkAction;
-    noteTitle: string;
-    noteDescription: string;
-    image: GalleryItem;
-    rails: HighlightItem[];
+    highlights: string[];
+    backgroundImage: string;
   };
   intro: {
     id: string;
@@ -77,7 +85,14 @@ export interface SiteContent {
     eyebrow: string;
     title: string;
     description: string;
-    items: GalleryItem[];
+    items: SpotlightItem[];
+  };
+  faq: {
+    id: string;
+    eyebrow: string;
+    title: string;
+    description: string;
+    items: FaqItem[];
   };
   cta: {
     eyebrow: string;
@@ -94,12 +109,11 @@ export interface SiteContent {
     details: ContactDetail[];
     panelTitle: string;
     panelDescription: string;
-    panelFields: string[];
-    panelAction: string;
+    panelSteps: string[];
+    panelNote: string;
   };
   footer: {
     note: string;
     copyright: string;
   };
 }
-

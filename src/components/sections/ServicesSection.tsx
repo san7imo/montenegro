@@ -24,6 +24,28 @@ export function ServicesSection({ content }: ServicesSectionProps) {
               <div className="service-item__body">
                 <h3>{item.title}</h3>
                 <p>{item.description}</p>
+
+                <div className="service-item__lists">
+                  <div className="service-list-block">
+                    <p className="service-list-block__title">{item.itemsTitle}</p>
+                    <ul>
+                      {item.items.map((entry) => (
+                        <li key={entry}>{entry}</li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="service-list-block">
+                    <p className="service-list-block__title">{item.benefitsTitle}</p>
+                    <ul>
+                      {item.benefits.map((entry) => (
+                        <li key={entry}>{entry}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+
+                <p className="service-item__note">{item.note}</p>
               </div>
             </article>
           ))}
@@ -32,4 +54,3 @@ export function ServicesSection({ content }: ServicesSectionProps) {
     </section>
   );
 }
-

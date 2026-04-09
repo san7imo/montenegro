@@ -8,7 +8,7 @@ interface GallerySectionProps {
 
 export function GallerySection({ content }: GallerySectionProps) {
   return (
-    <section className="section" id={content.id}>
+    <section className="section section--soft" id={content.id}>
       <Container>
         <SectionHeading
           description={content.description}
@@ -16,22 +16,23 @@ export function GallerySection({ content }: GallerySectionProps) {
           title={content.title}
         />
 
-        <div className="gallery-grid">
-          {content.items.map((item, index) => (
-            <figure
-              key={item.src}
-              className={["gallery-item", index === 0 ? "gallery-item--featured" : ""].join(" ")}
-            >
-              <img alt={item.alt} loading="lazy" src={item.src} />
-              <figcaption className="gallery-item__caption">
-                <p>{item.caption}</p>
-                <span>{item.note}</span>
-              </figcaption>
-            </figure>
+        <div className="spotlight-grid">
+          {content.items.map((item) => (
+            <article key={item.title} className="spotlight-item">
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+
+              <ul>
+                {item.items.map((entry) => (
+                  <li key={entry}>{entry}</li>
+                ))}
+              </ul>
+
+              <span>{item.note}</span>
+            </article>
           ))}
         </div>
       </Container>
     </section>
   );
 }
-

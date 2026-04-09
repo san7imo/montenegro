@@ -3,6 +3,7 @@ import { Navbar } from "./components/layout/Navbar";
 import { ContactSection } from "./components/sections/ContactSection";
 import { CtaSection } from "./components/sections/CtaSection";
 import { ExperienceSection } from "./components/sections/ExperienceSection";
+import { FaqSection } from "./components/sections/FaqSection";
 import { GallerySection } from "./components/sections/GallerySection";
 import { HeroSection } from "./components/sections/HeroSection";
 import { IntroSection } from "./components/sections/IntroSection";
@@ -24,6 +25,7 @@ function App() {
         <ServicesSection content={siteContent.services} />
         <ExperienceSection content={siteContent.experience} />
         <GallerySection content={siteContent.gallery} />
+        <FaqSection content={siteContent.faq} />
         <CtaSection content={siteContent.cta} />
         <ContactSection content={siteContent.contact} />
       </main>
@@ -39,4 +41,3 @@ function App() {
 }
 
 export default App;
-

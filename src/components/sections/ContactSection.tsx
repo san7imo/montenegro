@@ -29,25 +29,20 @@ export function ContactSection({ content }: ContactSectionProps) {
           </div>
         </div>
 
-        <aside className="contact-panel" aria-label="Bloque preparado para formulario">
-          <p className="eyebrow">Formulario preparado</p>
+        <aside className="contact-panel" aria-label="Resumen para reserva">
+          <p className="eyebrow">Solicitud inicial</p>
           <h3>{content.panelTitle}</h3>
           <p>{content.panelDescription}</p>
 
-          <div className="contact-panel__fields">
-            {content.panelFields.map((field) => (
-              <div key={field} className="contact-panel__field">
-                <span>{field}</span>
-              </div>
+          <ul className="contact-panel__steps">
+            {content.panelSteps.map((step) => (
+              <li key={step}>{step}</li>
             ))}
-          </div>
+          </ul>
 
-          <button className="contact-panel__button" disabled type="button">
-            {content.panelAction}
-          </button>
+          <p className="contact-panel__note">{content.panelNote}</p>
         </aside>
       </Container>
     </section>
   );
 }
-
