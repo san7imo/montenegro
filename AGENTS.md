@@ -1,40 +1,77 @@
 # AGENTS.md
 
 ## Proyecto
-Sitio web para **Montenegro Salud y Belleza**.
+Rediseño del sitio de **Montenegro Salud y Belleza**.
 
-## Objetivo
-Construir una web comercial, elegante y ligera en **React + TypeScript**, alineada con el manual de marca y preparada para crecer después a catálogo de servicios, reservas, testimonios y contacto por WhatsApp.
+## Estado actual
+El proyecto existe en **React + TypeScript + Vite** y hoy funciona como una **one page**. La siguiente fase ya no debe continuar esa lógica: el sitio debe evolucionar a una **experiencia multipágina**, con una home comercial renovada y páginas dedicadas para servicios.
 
-El sitio debe transmitir:
-- delicadeza
-- bienestar
-- descanso físico y mental
-- belleza
-- confianza
-- sensación premium sin verse recargado
+## Objetivo de esta actualización
+Rediseñar por completo la web para que:
 
-## Contexto disponible
-### Material confirmado
-- Existe un **manual de marca en PDF** con lineamientos visuales.
-- Existen **3 imágenes reales** proporcionadas por el cliente, que deben tratarse como los únicos recursos fotográficos reales disponibles por ahora.
-- No hay suficiente información del negocio todavía, por lo que se deben redactar **textos naturales, comerciales, sobrios y creíbles**, evitando afirmaciones demasiado específicas o inventadas.
-
-### Restricciones de contenido
-- No inventar promociones, precios, tratamientos específicos, sedes, horarios ni testimonios reales.
-- No inventar equipo humano, certificaciones o años de experiencia si no fueron confirmados.
-- Cuando falte información, usar copy comercial neutro y profesional.
-- Mantener el tono femenino, elegante, cercano y sereno.
+- tome como referencia visual los **mockups/imágenes** disponibles en el repositorio
+- conserve la **paleta oficial de marca**
+- mantenga una sensación **premium, limpia, femenina y serena**
+- deje de ser una single-page y pase a una estructura **multipágina**
+- prepare una base sólida para crecimiento posterior
 
 ---
 
-# 1. Lineamientos de marca que deben gobernar toda la implementación
+# 1. Fuentes de verdad para este rediseño
 
-## Identidad visual
-La marca usa un isotipo orgánico/minimalista inspirado en una **flor de loto** y en la inicial **M**, con una intención explícita de comunicar **delicadeza, belleza, tranquilidad y descanso físico o mental**.
+## Material disponible
+- `Manual de marca Montenegro.pdf`
+- `Mockups 1.png`
+- `Mockups 2.png`
+- `Mockups 3.png`
+- logotipo y assets de marca presentes en el proyecto
+- imágenes reales del negocio disponibles en el repositorio
+
+## Interpretación de las referencias visuales
+Las imágenes de mockup no son layouts web terminados; deben leerse como **referencias de lenguaje visual de marca**:
+
+- composición sobria
+- mucho aire visual
+- superficies claras y limpias
+- presencia elegante del logotipo
+- contraste controlado
+- sensación editorial y premium
+
+La web debe **traducir ese lenguaje a interfaz**, no copiar literalmente los mockups como si fueran banners.
+
+## Regla si faltan imágenes
+Si para una sección o página no existe una imagen aprobada:
+
+- dejar un bloque visual preparado
+- usar color, textura sutil o contenedor placeholder elegante
+- no rellenar con stock no aprobado
+- no duplicar artificialmente fotografías para aparentar más material
+
+---
+
+# 2. Restricciones de contenido
+
+## Sí hacer
+- redactar copy comercial sobrio, natural y creíble
+- mantener el tono femenino, cercano y sereno
+- usar categorías editables cuando falte información definitiva
+- centralizar textos, links, slugs y datos editables
+
+## No hacer
+- no inventar promociones
+- no inventar precios
+- no inventar testimonios reales
+- no inventar sedes, horarios, certificaciones o trayectoria no confirmada
+- no afirmar tratamientos o beneficios médicos no validados
+
+La versión nueva debe corregir cualquier copy demasiado específico que hoy no esté respaldado.
+
+---
+
+# 3. Lineamientos visuales obligatorios
 
 ## Paleta oficial
-Usar como variables globales del proyecto:
+Usar como variables base:
 
 ```css
 --color-fucsia: #980562;
@@ -43,632 +80,266 @@ Usar como variables globales del proyecto:
 --color-blanco: #ffffff;
 ```
 
-## Uso recomendado de color en web
-- **Azul oscuro (`#05012a`)**: textos principales, fondos de contraste, overlays elegantes, footer.
-- **Fucsia (`#980562`)**: botones principales, acentos, íconos, estados hover, divisores sutiles.
-- **Rosa (`#ffcaf0`)**: fondos suaves de secciones, tarjetas destacadas, bloques respirables.
-- **Blanco (`#ffffff`)**: fondos limpios, contraste, aire visual.
+## Uso del color
+- `#05012a`: tipografía principal, bloques de contraste, footer, overlays sobrios
+- `#980562`: CTAs, acentos, detalles interactivos, indicadores
+- `#ffcaf0`: fondos suaves, tarjetas destacadas, respiración visual
+- `#ffffff`: base principal, espacios amplios, contraste limpio
 
-## Tipografías del manual
-- **Primaria de marca:** `Vivaldi Italic`
-- **Secundaria / textos:** `Yu Gothic UI`
+## Tipografía
+- acento de marca: `Vivaldi Italic` solo en momentos puntuales
+- textos funcionales: `"Yu Gothic UI", "Yu Gothic", "Segoe UI", sans-serif`
 
-## Criterio de implementación tipográfica en web
-`Vivaldi Italic` no debe usarse en exceso. En web debe reservarse para:
-- logotipo
-- títulos hero muy puntuales
-- frases cortas de acento visual
+## Dirección estética
+El nuevo sitio debe sentirse:
 
-Para todo el contenido funcional, navegación, párrafos, botones y formularios, usar una sans-serif equivalente a **Yu Gothic UI** o una alternativa web-safe cercana.
-
-### Fallback sugerido
-```css
-font-family: "Yu Gothic UI", "Yu Gothic", "Segoe UI", sans-serif;
-```
-
-## Reglas visuales obligatorias
-- No alterar colores del logotipo.
-- No rotar, deformar, animar ni modificar el logo.
-- No aplicar transparencias impropias sobre la marca.
-- Respetar el área de seguridad del logo.
-- Evitar composiciones saturadas.
-- Mantener abundante espacio en blanco.
-- Priorizar elegancia y calma sobre efectos llamativos.
-
-## Dirección estética del sitio
-El sitio debe sentirse como:
-- premium
-- femenino
-- delicado
-- limpio
-- relajante
-- moderno pero no frío
-
-Evitar:
-- gradientes agresivos
-- sombras muy pesadas
-- animaciones invasivas
-- sliders innecesarios
-- exceso de ornamentos
-- bloques densos de texto
-
----
-
-# 2. Enfoque de producto para la web
-
-## Tipo de sitio a construir
-Primera versión tipo **landing page / sitio corporativo comercial** con estructura modular.
-
-Debe quedar listo para evolucionar después a:
-- sección de servicios ampliada
-- reservas por WhatsApp o formulario
-- testimonios
-- galería real del centro
-- preguntas frecuentes
-- integración futura con agenda
-
-## Objetivo del MVP
-Lograr una presencia web profesional que:
-1. presente la marca con coherencia visual
-2. comunique bienestar y belleza
-3. muestre servicios de forma atractiva
-4. use las 3 imágenes reales disponibles
-5. convierta visitas en contactos
-
----
-
-# 3. Arquitectura de información propuesta
-
-Construir el sitio inicialmente con estas secciones:
-
-1. **Header / Navbar**
-2. **Hero principal**
-3. **Sección de bienvenida / presentación**
-4. **Servicios destacados**
-5. **Experiencia / por qué elegirnos**
-6. **Galería visual** usando las 3 imágenes reales
-7. **CTA principal** hacia WhatsApp o contacto
-8. **Contacto / ubicación / formulario simple**
-9. **Footer**
-
-## Detalle por sección
-
-### Header
-Debe incluir:
-- logo
-- navegación con scroll suave
-- CTA visible: `Agenda tu cita` o `Contáctanos`
-
-Comportamiento:
-- transparente o muy liviano sobre hero
-- solid al hacer scroll
-- mobile-first con menú hamburguesa
-
-### Hero
-Debe comunicar de inmediato:
-- salud
-- belleza
-- bienestar
-- experiencia relajante
-
-Debe incluir:
-- título principal comercial
-- breve descripción
-- botón principal
-- botón secundario opcional
-- una imagen real o composición elegante con una de las 3 imágenes
-
-No recargar el hero con demasiada información.
-
-### Presentación
-Bloque breve de marca con texto humano y creíble. Enfatizar:
-- atención personalizada
-- espacio pensado para el bienestar
-- acompañamiento estético
-- ambiente de calma y cuidado
-
-### Servicios destacados
-Como no hay servicios confirmados, trabajar con categorías comerciales genéricas y editables, por ejemplo:
-- tratamientos faciales
-- cuidado corporal
-- bienestar y relajación
-- atención personalizada
-
-Esto debe quedar claramente estructurado para edición posterior.
-
-### Experiencia / beneficios
-Usar tarjetas o bloques con mensajes como:
-- atención cercana
-- espacios pensados para tu comodidad
-- enfoque en bienestar integral
-- experiencia estética con calidez
-
-### Galería
-Usar únicamente las imágenes reales disponibles.
-No duplicarlas artificialmente para simular más contenido.
-Se puede presentar:
-- grid elegante
-- collage limpio
-- masonry simple
-
-### CTA
-Bloque fuerte pero sobrio con fondo de contraste.
-Mensaje orientado a conversión:
-- agenda tu cita
-- solicita información
-- descubre una experiencia pensada para ti
-
-### Contacto
-Preparar el layout para:
-- teléfono / WhatsApp
-- dirección editable
-- horario editable
-- formulario simple
-- redes sociales si existen
-
-Si esos datos no existen todavía, dejar placeholders claramente localizables en constantes o archivo de contenido.
-
-### Footer
-Debe incluir:
-- nombre de marca
-- navegación resumida
-- datos de contacto editables
-- copyright
-
----
-
-# 4. Estrategia de contenido
-
-## Tono de redacción
-Redactar textos en español con tono:
-- comercial
-- cálido
 - elegante
-- natural
-- confiable
-- femenino sin caer en clichés excesivos
-
-## Estilo de copy
-Priorizar frases como:
-- bienestar
-- cuidado
-- armonía
-- experiencia
-- atención personalizada
-- belleza que se siente
-- espacio pensado para ti
+- ligero
+- calmado
+- premium
+- femenino sin exceso ornamental
+- moderno sin verse frío
 
 Evitar:
-- exageraciones
-- claims médicos
-- frases muy vacías
-- lenguaje demasiado genérico tipo plantilla barata
 
-## Regla de copy placeholder
-Todo texto debe sonar suficientemente real como para publicar una primera versión mientras el cliente entrega información definitiva.
-
-Crear el contenido de forma centralizada en un archivo tipo:
-
-```ts
-src/content/siteContent.ts
-```
-
-o similar, para que luego sea fácil editar textos, CTAs, servicios y contacto.
+- sliders
+- composiciones densas
+- gradientes agresivos
+- sombras pesadas
+- bloques gigantes de texto
+- recursos visuales ruidosos
 
 ---
 
-# 5. Stack técnico obligatorio
+# 4. Cambio de arquitectura: de one page a multipágina
 
-## Base
+## Decisión de producto
+La actualización abandona la estructura de landing única. A partir de esta fase, el sitio debe trabajar con rutas reales.
+
+## Arquitectura inicial requerida
+
+### Ruta `/`
+Home comercial renovada, enfocada en:
+- presentación de marca
+- propuesta de valor
+- resumen de servicios
+- bloques visuales alineados al nuevo lenguaje
+- CTA a contacto y páginas de servicio
+
+### Ruta `/servicios`
+Índice de servicios:
+- listado claro de categorías
+- tarjetas o bloques editoriales
+- navegación a cada detalle
+
+### Ruta `/servicios/:slug`
+Plantilla reusable para páginas de detalle:
+- hero específico
+- descripción general
+- beneficios o enfoque
+- bloque visual
+- CTA a contacto o WhatsApp
+
+### Ruta `/contacto`
+Página independiente de contacto:
+- canales de contacto editables
+- layout preparado para dirección, horario y WhatsApp
+- formulario visual simple si aplica en frontend
+
+## Rutas opcionales si el diseño lo pide
+Se pueden añadir más adelante:
+- `/nosotros`
+- `/galeria`
+- `/faq`
+
+Pero el mínimo de esta actualización es: **home + índice de servicios + detalle de servicio + contacto**.
+
+---
+
+# 5. Estructura de contenido y datos
+
+Todo el contenido editable debe salir de archivos centrales, no de hardcodes dispersos en componentes.
+
+## Archivos esperados
+- `src/content/siteContent.ts`
+- `src/content/servicesContent.ts` o equivalente
+- constantes compartidas para navegación, CTAs y contacto
+
+## Los datos de servicios deben contemplar
+- `slug`
+- `title`
+- `shortDescription`
+- `description`
+- `highlights`
+- `heroImage`
+- `galleryImage` o placeholder
+- `cta`
+
+Si faltan imágenes por servicio, dejar el campo preparado y renderizar un espacio elegante de reemplazo.
+
+---
+
+# 6. Dirección de diseño para la nueva UI
+
+## Header
+- navegación persistente entre páginas
+- comportamiento claro en scroll
+- CTA visible
+- estado mobile limpio y liviano
+
+## Home
+Debe tomar del material visual:
+- sensación editorial
+- bloques amplios
+- jerarquía tipográfica más limpia
+- protagonismo de imagen y marca sin saturación
+
+La home no debe depender de anclas internas como navegación principal.
+
+## Servicios
+Las páginas de servicios no deben verse como modales ni como secciones recicladas de la home. Deben sentirse como páginas reales, con estructura propia y consistencia visual.
+
+## Bloques visuales
+Usar:
+- fotografías reales disponibles
+- placeholders bien integrados si faltan assets
+- formas suaves inspiradas en el isotipo
+- detalles finos de color de marca
+
+No usar:
+- stock no aprobado
+- iconografía recargada
+- marcos decorativos excesivos
+
+---
+
+# 7. Stack y criterios técnicos
+
+## Base obligatoria
 - React
 - TypeScript
 - Vite
 
-## Estilo
-Preferiblemente una de estas dos opciones:
-1. **Tailwind CSS** si se desea velocidad y consistencia.
-2. CSS Modules si se desea control más clásico.
+## Librerías permitidas si aportan valor real
+- `react-router-dom` para la arquitectura multipágina
+- `clsx` si simplifica composición de clases
+- `lucide-react` si la iconografía realmente hace falta
 
-**Preferencia recomendada:** Tailwind CSS.
+No agregar dependencias por moda.
 
-## Librerías sugeridas
-Usar solo si aportan valor real:
-- `react-router-dom` solo si se crean rutas reales
-- `framer-motion` para microanimaciones suaves
-- `lucide-react` para iconografía
-- `clsx` para composición de clases
-
-No meter dependencias innecesarias.
-
-## Rendimiento
-- Optimizar imágenes
-- Lazy load donde tenga sentido
-- Componentes pequeños y reutilizables
-- Evitar renderizados complejos
-- Mantener Lighthouse alto
+## Criterios técnicos
+- componentes reutilizables
+- layout compartido
+- rutas tipadas y claras
+- contenido centralizado
+- tipado limpio para navegación y servicios
+- assets optimizados
+- semántica y accesibilidad básica correctas
 
 ---
 
-# 6. Estructura técnica sugerida
+# 8. Hitos de ejecución para esta actualización
 
-```txt
-src/
-  assets/
-    images/
-    brand/
-  components/
-    layout/
-    sections/
-    ui/
-  content/
-    siteContent.ts
-  data/
-  hooks/
-  lib/
-  styles/
-  App.tsx
-  main.tsx
-```
-
-## Componentes esperados
-- `Navbar`
-- `HeroSection`
-- `IntroSection`
-- `ServicesSection`
-- `BenefitsSection`
-- `GallerySection`
-- `CtaSection`
-- `ContactSection`
-- `Footer`
-- componentes UI reutilizables (`Button`, `SectionTitle`, `Container`, `Card`)
-
----
-
-# 7. Sistema visual a implementar
-
-## Layout
-- contenedor máximo elegante
-- buena respiración vertical entre secciones
-- jerarquía tipográfica clara
-- diseño mobile-first
-
-## Bordes y formas
-Inspirarse sutilmente en la suavidad del isotipo.
-Se pueden usar:
-- bordes redondeados medianos
-- shapes suaves en fondos
-- líneas orgánicas muy discretas
-
-No copiar literalmente el manual como fondo pesado en toda la página.
-La inspiración debe ser sutil.
-
-## Fondos
-Alternar de forma limpia:
-- blanco
-- rosa suave
-- bloques oscuros azul profundo para contraste
-
-## Botones
-### Primario
-- fondo fucsia
-- texto claro
-- hover elegante
-
-### Secundario
-- fondo transparente o blanco
-- borde azul o fucsia
-- texto sobrio
-
-## Iconografía
-Minimalista, limpia, coherente con bienestar y estética.
-
----
-
-# 8. Uso de imágenes
-
-## Regla principal
-Solo usar las 3 imágenes disponibles en el repositorio como imágenes reales del proyecto.
-
-## Implementación esperada
-- Revisar proporciones
-- Crear versiones optimizadas si es necesario
-- Reutilizarlas con criterio, no de forma repetitiva o artificial
-- Aplicar overlays suaves cuando ayuden a legibilidad
-- Mantener foco visual elegante
-
-## Si faltan imágenes para alguna sección
-Resolver con:
-- fondos limpios
-- bloques tipográficos
-- shapes suaves
-- composiciones con color de marca
-
-No rellenar con stock falso a menos que el cliente lo apruebe explícitamente.
-
----
-
-# 9. Accesibilidad y calidad
-
-## Accesibilidad mínima
-- contraste suficiente
-- `alt` en imágenes
-- estructura semántica correcta
-- navegación por teclado razonable
-- botones y enlaces claros
-
-## Calidad de implementación
-- código limpio
-- tipado correcto
-- componentes desacoplados
-- sin hardcodes dispersos
-- constantes para colores, textos y enlaces
-
----
-
-# 10. Hitos de trabajo
-
-## Hito 0 — Auditoría inicial del material
+## Hito 1 — Definición visual y reestructuración base
 ### Objetivo
-Entender el manual de marca y localizar los assets disponibles.
+Aterrizar el rediseño con una base técnica coherente antes de tocar todas las pantallas.
 
 ### Tareas
-- revisar el manual de marca completo
-- identificar paleta, tipografías, tono visual y restricciones
-- localizar las 3 imágenes disponibles en el repositorio
-- validar formatos y pesos de imágenes
-- documentar decisiones base de UI
+- revisar manual y mockups
+- traducir referencias visuales a decisiones de UI web
+- limpiar el enfoque actual one page
+- definir mapa de rutas
+- ajustar estructura de contenido para multipágina
+- actualizar componentes base, layout y navegación global
 
 ### Entregable
-- breve resumen técnico de decisiones visuales antes de implementar
+- arquitectura del proyecto lista para multipágina
+- sistema base alineado con la nueva dirección visual
 
----
-
-## Hito 1 — Inicialización del proyecto
+## Hito 2 — Home rediseñada
 ### Objetivo
-Dejar lista la base técnica del sitio.
+Reconstruir la página principal con el nuevo lenguaje visual.
 
 ### Tareas
-- crear proyecto con Vite + React + TypeScript
-- configurar estructura de carpetas
-- instalar Tailwind CSS si se usa
-- limpiar archivos de ejemplo
-- configurar alias si aplica
-- crear layout base
+- rediseñar hero
+- rehacer secciones principales
+- ajustar jerarquías, espaciados y CTAs
+- reemplazar la lógica de navegación por anclas como patrón principal
+- integrar imágenes reales o placeholders donde corresponda
 
 ### Entregable
-- proyecto corriendo con estructura inicial limpia
+- home terminada y consistente con la nueva línea visual
 
----
-
-## Hito 2 — Sistema de diseño base
+## Hito 3 — Ecosistema de servicios
 ### Objetivo
-Traducir el manual de marca a tokens y utilidades reutilizables.
+Crear la navegación y las páginas dedicadas para servicios.
 
 ### Tareas
-- crear variables globales de color
-- configurar tipografías y fallbacks
-- definir escalas de espaciado
-- crear clases/utilidades de contenedor
-- crear estilos base para títulos, párrafos y botones
-- definir estándares de sombras, radios y fondos
+- crear página índice de servicios
+- crear plantilla reusable de detalle por servicio
+- definir slugs y estructura de datos
+- conectar CTAs desde home hacia páginas internas
+- dejar campos listos para ampliar servicios después
 
 ### Entregable
-- sistema visual consistente listo para usar en todas las secciones
+- flujo completo de servicios funcionando con rutas reales
 
----
-
-## Hito 3 — Estructura de contenido editable
+## Hito 4 — Contacto, pulido y entrega técnica
 ### Objetivo
-Evitar textos hardcodeados dentro de los componentes.
+Cerrar la experiencia multipágina y dejarla lista para validar.
 
 ### Tareas
-- crear archivo central de contenido
-- definir textos del hero
-- definir textos de bienvenida
-- definir servicios genéricos editables
-- definir beneficios
-- definir CTAs
-- definir datos de contacto placeholders
-
-### Entregable
-- archivo de contenido único y reutilizable
-
----
-
-## Hito 4 — Header y navegación responsive
-### Objetivo
-Construir una navegación elegante y usable.
-
-### Tareas
-- implementar navbar desktop
-- implementar menú móvil
-- agregar CTA principal
-- hacer scroll suave a secciones
-- manejar estado de navbar al hacer scroll
-- asegurar legibilidad sobre hero
-
-### Entregable
-- header completamente responsive y funcional
-
----
-
-## Hito 5 — Hero principal
-### Objetivo
-Construir una entrada visual fuerte, alineada a marca y orientada a conversión.
-
-### Tareas
-- diseñar hero con una imagen real o composición visual sobria
-- integrar título, descripción y CTAs
-- ajustar overlay para legibilidad
-- garantizar equilibrio visual en mobile y desktop
-- mantener un look premium y relajante
-
-### Entregable
-- hero final listo
-
----
-
-## Hito 6 — Secciones de presentación y servicios
-### Objetivo
-Comunicar qué ofrece la marca sin depender de información demasiado específica.
-
-### Tareas
-- implementar sección de bienvenida
-- implementar bloque de servicios destacados
-- crear tarjetas editables
-- mantener copy natural y comercial
-- cuidar ritmo visual entre secciones
-
-### Entregable
-- cuerpo medio del sitio funcional y visualmente consistente
-
----
-
-## Hito 7 — Sección de experiencia/beneficios y galería
-### Objetivo
-Aumentar confianza y aprovechar el material visual disponible.
-
-### Tareas
-- construir bloque de beneficios o diferenciales
-- crear galería con las 3 imágenes reales
-- optimizar imágenes
-- asegurar diseño atractivo sin saturar
-- definir orden visual correcto de las fotos
-
-### Entregable
-- bloque de confianza + galería final
-
----
-
-## Hito 8 — CTA final, contacto y footer
-### Objetivo
-Cerrar el recorrido con conversión clara.
-
-### Tareas
-- implementar CTA principal
-- construir sección de contacto
-- agregar placeholders claros para WhatsApp, dirección, horarios y redes
-- construir footer coherente con la marca
-- verificar consistencia de enlaces y botones
-
-### Entregable
-- landing completa navegable de inicio a fin
-
----
-
-## Hito 9 — Microinteracciones y refinamiento visual
-### Objetivo
-Pulir la experiencia sin romper la sobriedad de la marca.
-
-### Tareas
-- agregar animaciones suaves y discretas
-- ajustar hovers de botones y cards
-- mejorar transiciones del menú
-- revisar spacing y jerarquías
-- revisar balance visual general
-
-### Entregable
-- versión refinada visualmente
-
----
-
-## Hito 10 — Responsividad, accesibilidad y performance
-### Objetivo
-Dejar el sitio listo para entrega técnica.
-
-### Tareas
-- revisar mobile, tablet y desktop
-- corregir overflows y saltos de layout
+- crear o refinar página de contacto
+- revisar header/footer globales
+- corregir responsividad
 - revisar accesibilidad básica
-- optimizar imágenes y assets
-- revisar SEO base: title, description, estructura semántica
-- pasar revisión de calidad general
+- validar placeholders faltantes
+- pasar build de producción
+- dejar notas breves para futura edición
 
 ### Entregable
-- MVP listo para deploy
+- MVP multipágina listo para revisión
 
 ---
 
-## Hito 11 — Preparación para despliegue
-### Objetivo
-Dejar el proyecto listo para publicar.
+# 9. Criterios de aceptación
 
-### Tareas
-- validar build de producción
-- revisar rutas y assets
-- documentar pasos de deploy
-- dejar instrucciones para editar contenido
-- preparar README breve del proyecto
+El trabajo se considera bien encaminado si:
 
-### Entregable
-- build estable y documentación mínima
+- la web deja de depender de una arquitectura one page
+- el rediseño recoge el lenguaje visual de los mockups sin salir de la paleta oficial
+- la home y las páginas internas se sienten parte de un mismo sistema
+- existe una ruta índice de servicios y al menos una plantilla de detalle reusable
+- el contenido queda centralizado y fácil de editar
+- faltantes de imagen quedan resueltos con espacios preparados, no con relleno falso
+- el sitio se ve sólido en móvil y escritorio
 
 ---
 
-# 11. Criterios de aceptación
-
-El trabajo se considera bien hecho si:
-- el sitio refleja claramente la marca Montenegro
-- la experiencia visual comunica bienestar, delicadeza y profesionalismo
-- el diseño se siente premium sin saturación
-- el código queda limpio y mantenible
-- el contenido placeholder suena real y comercial
-- la web funciona correctamente en móvil y escritorio
-- las 3 imágenes reales están bien integradas
-- el sitio queda listo para una futura expansión
-
----
-
-# 12. Indicaciones de ejecución para el agente
+# 10. Instrucciones de ejecución
 
 ## Haz
-- trabajar por hitos
-- mantener commits o cambios agrupados por bloque funcional
-- crear componentes reutilizables
-- centralizar contenido editable
-- respetar el manual de marca por encima de preferencias visuales arbitrarias
-- priorizar elegancia, claridad y conversión
+- avanzar por hitos
+- agrupar cambios por bloques funcionales
+- validar arquitectura antes de refinar detalles visuales
+- priorizar primero estructura y navegación, luego detalle visual
+- respetar el manual de marca por encima de decisiones arbitrarias
 
 ## No hagas
-- no inventes módulos complejos que no fueron pedidos
-- no agregues backend
-- no agregues CMS
-- no uses carruseles innecesarios
-- no metas librerías por moda
-- no cambies el lenguaje visual de la marca
-- no uses imágenes stock no aprobadas
-- no deformes el logo ni alteres sus colores
+- no seguir extendiendo la versión actual como una one page
+- no dejar servicios importantes enterrados dentro de la home
+- no convertir los mockups en decoración vacía
+- no meter imágenes no aprobadas
+- no inventar información comercial específica
+- no romper la consistencia entre páginas
 
 ---
 
-# 13. Propuesta de copy inicial de referencia
+# 11. Nota para implementación
 
-## Hero
-### Título
-Un espacio pensado para tu bienestar y tu belleza
+Antes de arrancar cada hito:
 
-### Descripción
-En Montenegro Salud y Belleza vivimos el cuidado personal como una experiencia de armonía, atención cercana y bienestar. Creamos un entorno pensado para que te sientas cómoda, tranquila y segura en cada visita.
-
-### CTA principal
-Agenda tu cita
-
-### CTA secundaria
-Solicita información
-
-## Presentación
-Cuidar de ti también es regalarte una pausa. En Montenegro queremos ofrecerte una experiencia cálida y profesional, donde bienestar, belleza y atención personalizada se encuentran en un mismo lugar.
-
-## Servicios
-- Cuidado facial
-- Bienestar corporal
-- Experiencias de relajación
-- Atención personalizada
-
-## CTA final
-Descubre una experiencia creada para resaltar tu bienestar.
-
----
-
-# 14. Nota importante
-Si en el repositorio aún no están las 3 imágenes, dejar el sitio preparado con espacios definidos para integrarlas fácilmente apenas se agreguen.
+1. confirmar qué partes del diseño actual se conservan y cuáles se reemplazan
+2. priorizar reutilización de componentes cuando tenga sentido
+3. si una imagen no existe todavía, dejar el bloque listo con placeholder elegante
+4. mantener siempre navegabilidad real entre páginas

@@ -1,21 +1,25 @@
 import { useEffect, useState } from "react";
-import type { LinkAction, NavItem, SiteContent } from "../../types/content";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import type { ActionTarget, SiteConfig, SiteRouteItem } from "../../types/content";
 import { Container } from "../ui/Container";
 import { ButtonLink } from "../ui/ButtonLink";
 
 interface NavbarProps {
-  brand: SiteContent["brand"];
-  navigation: NavItem[];
-  action: LinkAction;
+  brand: SiteConfig["brand"];
+  navigation: SiteRouteItem[];
+  action: ActionTarget;
 }
 
 export function Navbar({ brand, navigation, action }: NavbarProps) {
   const [menuOpen, setMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const location = useLocation();
+  const isHome = location.pathname === "/";
+  const isOverlayHeader = isHome && !isScrolled;
 
   useEffect(() => {
     const onScroll = () => {
-      setIsScrolled(window.scrollY > 24);
+      setIsScrolled(window.scrollY > 72);
     };
 
     onScroll();
@@ -27,6 +31,10 @@ export function Navbar({ brand, navigation, action }: NavbarProps) {
   }, []);
 
   useEffect(() => {
+    setMenuOpen(false);
+  }, [location.pathname]);
+
+  useEffect(() => {
     document.body.classList.toggle("menu-open", menuOpen);
 
     return () => {
@@ -35,22 +43,34 @@ export function Navbar({ brand, navigation, action }: NavbarProps) {
   }, [menuOpen]);
 
   return (
-    <header className={["site-header", isScrolled ? "site-header--solid" : ""].join(" ")}>
+    <header
+      className={[
+        "site-header",
+        isOverlayHeader ? "site-header--home" : "",
+        isScrolled ? "site-header--solid" : "",
+      ]
+        .filter(Boolean)
+        .join(" ")}
+    >
       <Container className="site-header__inner">
-        <a aria-label={brand.name} className="brand-link" href="#inicio">
+        <Link aria-label={brand.name} className="brand-link" to="/">
           <img alt={brand.name} className="brand-link__image" src={brand.logo} />
-        </a>
+        </Link>
 
         <nav aria-label="Principal" className="site-nav site-nav--desktop">
           {navigation.map((item) => (
-            <a key={item.href} href={item.href}>
+            <NavLink
+              className={({ isActive }) => ["site-nav__link", isActive ? "site-nav__link--active" : ""].filter(Boolean).join(" ")}
+              key={item.to}
+              to={item.to}
+            >
               {item.label}
-            </a>
+            </NavLink>
           ))}
         </nav>
 
         <div className="site-header__cta">
-          <ButtonLink href={action.href} label={action.label} />
+          <ButtonLink label={action.label} to={action.to} />
         </div>
 
         <button
@@ -66,24 +86,23 @@ export function Navbar({ brand, navigation, action }: NavbarProps) {
         </button>
       </Container>
 
-      <div className={["mobile-menu", menuOpen ? "mobile-menu--open" : ""].join(" ")} id="mobile-menu">
+      <div className={["mobile-menu", menuOpen ? "mobile-menu--open" : ""].filter(Boolean).join(" ")} id="mobile-menu">
         <Container className="mobile-menu__inner">
           <nav aria-label="Principal móvil" className="site-nav site-nav--mobile">
             {navigation.map((item) => (
-              <a key={item.href} href={item.href} onClick={() => setMenuOpen(false)}>
+              <NavLink
+                className={({ isActive }) => ["site-nav__link", isActive ? "site-nav__link--active" : ""].filter(Boolean).join(" ")}
+                key={item.to}
+                to={item.to}
+              >
                 {item.label}
-              </a>
+              </NavLink>
             ))}
           </nav>
-          <ButtonLink
-            className="mobile-menu__cta"
-            href={action.href}
-            label={action.label}
-            variant="secondary"
-          />
+
+          <ButtonLink className="mobile-menu__cta" label={action.label} to={action.to} variant="secondary" />
         </Container>
       </div>
     </header>
   );
 }
-

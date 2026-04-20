@@ -1,42 +1,26 @@
-import { Footer } from "./components/layout/Footer";
-import { Navbar } from "./components/layout/Navbar";
-import { ContactSection } from "./components/sections/ContactSection";
-import { CtaSection } from "./components/sections/CtaSection";
-import { ExperienceSection } from "./components/sections/ExperienceSection";
-import { FaqSection } from "./components/sections/FaqSection";
-import { GallerySection } from "./components/sections/GallerySection";
-import { HeroSection } from "./components/sections/HeroSection";
-import { IntroSection } from "./components/sections/IntroSection";
-import { ServicesSection } from "./components/sections/ServicesSection";
-import { siteContent } from "./content/siteContent";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { ScrollToTop } from "./components/layout/ScrollToTop";
+import { SiteLayout } from "./components/layout/SiteLayout";
+import { ContactPage } from "./pages/ContactPage";
+import { HomePage } from "./pages/HomePage";
+import { NotFoundPage } from "./pages/NotFoundPage";
+import { ServiceDetailPage } from "./pages/ServiceDetailPage";
+import { ServicesPage } from "./pages/ServicesPage";
 
 function App() {
   return (
-    <div className="site-shell">
-      <Navbar
-        action={siteContent.hero.primaryAction}
-        brand={siteContent.brand}
-        navigation={siteContent.navigation}
-      />
-
-      <main>
-        <HeroSection content={siteContent.hero} />
-        <IntroSection content={siteContent.intro} />
-        <ServicesSection content={siteContent.services} />
-        <ExperienceSection content={siteContent.experience} />
-        <GallerySection content={siteContent.gallery} />
-        <FaqSection content={siteContent.faq} />
-        <CtaSection content={siteContent.cta} />
-        <ContactSection content={siteContent.contact} />
-      </main>
-
-      <Footer
-        brand={siteContent.brand}
-        copyright={siteContent.footer.copyright}
-        navigation={siteContent.navigation}
-        note={siteContent.footer.note}
-      />
-    </div>
+    <BrowserRouter>
+      <ScrollToTop />
+      <Routes>
+        <Route element={<SiteLayout />} path="/">
+          <Route element={<HomePage />} index />
+          <Route element={<ServicesPage />} path="servicios" />
+          <Route element={<ServiceDetailPage />} path="servicios/:slug" />
+          <Route element={<ContactPage />} path="contacto" />
+          <Route element={<NotFoundPage />} path="*" />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 
